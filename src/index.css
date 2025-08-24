@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Retro Arcade Design System - iLLU32 Palette */
+
+@layer base {
+  :root {
+    /* Retro Arcade Color Palette (HSL converted) */
+    --arcade-red-1: 352 79% 68%;    /* #f26d7d */
+    --arcade-red-2: 348 71% 58%;    /* #d94f6a */
+    --arcade-red-3: 343 52% 47%;    /* #b03755 */
+    
+    --arcade-orange-1: 33 91% 68%;  /* #f7b267 */
+    --arcade-orange-2: 28 90% 68%;  /* #f79d65 */
+    --arcade-orange-3: 23 66% 56%;  /* #d97d4a */
+    --arcade-orange-4: 20 59% 40%;  /* #a65529 */
+    
+    --arcade-yellow-1: 52 90% 68%;  /* #f7e967 */
+    --arcade-yellow-2: 48 91% 63%;  /* #f7d154 */
+    --arcade-yellow-3: 42 71% 56%;  /* #d9a441 */
+    
+    --arcade-green-1: 88 73% 59%;   /* #a9e34b */
+    --arcade-green-2: 105 67% 49%;  /* #70c838 */
+    --arcade-green-3: 115 65% 38%;  /* #3a9d23 */
+    
+    --arcade-blue-1: 190 91% 70%;   /* #6ee2f7 */
+    --arcade-blue-2: 203 88% 64%;   /* #53b6f2 */
+    --arcade-blue-3: 213 74% 54%;   /* #387ed9 */
+    --arcade-blue-4: 220 58% 39%;   /* #2a4c99 */
+    
+    --arcade-gray-1: 215 8% 82%;    /* #cfd2d6 */
+    --arcade-gray-2: 215 4% 66%;    /* #a0a4a9 */
+    --arcade-gray-3: 215 5% 45%;    /* #6d7076 */
+    --arcade-gray-4: 215 10% 26%;   /* #3c3f44 */
+
+    /* Bright Retro Theme Mapping - Blues, Cyans, Magentas */
+    --background: var(--arcade-blue-4);
+    --foreground: var(--arcade-blue-1);
+
+    --card: var(--arcade-blue-3);
+    --card-foreground: var(--arcade-blue-1);
+
+    --primary: var(--arcade-red-1);
+    --primary-foreground: var(--arcade-blue-1);
+
+    --secondary: var(--arcade-blue-2);
+    --secondary-foreground: var(--arcade-blue-4);
+
+    --accent: var(--arcade-blue-1);
+    --accent-foreground: var(--arcade-blue-4);
+
+    --muted: var(--arcade-gray-3);
+    --muted-foreground: var(--arcade-gray-1);
+
+    --border: var(--arcade-yellow-1);
+    --input: var(--arcade-gray-3);
+    --ring: var(--arcade-yellow-1);
+
+    --destructive: var(--arcade-red-1);
+    --destructive-foreground: var(--arcade-yellow-1);
+
+    --radius: 0rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  /* Retro Arcade Font */
+  .font-arcade {
+    font-family: 'Press Start 2P', monospace;
+    font-weight: 400;
+  }
+
+  /* CRT Screen Effect */
+  .crt-screen {
+    background: linear-gradient(
+      transparent 50%,
+      hsl(var(--arcade-gray-4) / 0.05) 50%
+    );
+    background-size: 100% 4px;
+    position: relative;
+  }
+
+  .crt-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--arcade-blue-1) / 0.03),
+      transparent
+    );
+    pointer-events: none;
+  }
+
+  /* Bright Retro Arcade Button Styles */
+  .arcade-button {
+    background: linear-gradient(
+      145deg,
+      hsl(var(--arcade-red-1)),
+      hsl(var(--arcade-red-2))
+    );
+    border: 3px solid hsl(var(--arcade-blue-1));
+    color: hsl(var(--arcade-blue-1));
+    text-shadow: 
+      2px 2px 0px hsl(var(--arcade-blue-4)),
+      0 0 10px hsl(var(--arcade-blue-1) / 0.8);
+    box-shadow: 
+      0 0 20px hsl(var(--arcade-blue-1) / 0.6),
+      0 0 40px hsl(var(--arcade-red-1) / 0.3),
+      inset 0 1px 0 hsl(var(--arcade-red-1) / 0.8);
+    transition: all 0.1s ease;
+  }
+
+  .arcade-button:hover {
+    background: linear-gradient(
+      145deg,
+      hsl(var(--arcade-blue-1)),
+      hsl(var(--arcade-blue-2))
+    );
+    border-color: hsl(var(--arcade-yellow-1));
+    color: hsl(var(--arcade-blue-4));
+    box-shadow: 
+      0 0 30px hsl(var(--arcade-blue-1) / 0.9),
+      0 0 60px hsl(var(--arcade-blue-2) / 0.5),
+      inset 0 1px 0 hsl(var(--arcade-blue-1) / 0.9);
+    transform: translateY(-2px);
+  }
+
+  .arcade-button:active {
+    transform: translateY(1px);
+    box-shadow: 
+      0 0 5px hsl(var(--arcade-red-2) / 0.3),
+      inset 0 1px 3px hsl(var(--arcade-gray-4) / 0.5);
+  }
+
+  /* Insert Coin Animation */
+  @keyframes insert-coin-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+  }
+
+  .insert-coin {
+    animation: insert-coin-blink 1.5s infinite;
+    color: hsl(var(--arcade-blue-1));
+    text-shadow: 
+      0 0 15px hsl(var(--arcade-blue-1)),
+      0 0 30px hsl(var(--arcade-blue-2)),
+      2px 2px 0px hsl(var(--arcade-blue-4));
+  }
+
+  /* Scanline Effect */
+  @keyframes scanline {
+    0% { transform: translateY(-100vh); }
+    100% { transform: translateY(100vh); }
+  }
+
+  .scanline {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--arcade-blue-1) / 0.5),
+      transparent
+    );
+    animation: scanline 3s linear infinite;
+    pointer-events: none;
+  }
+
+  /* Pixel Art Style */
+  .pixel-art {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  /* Game Canvas Style */
+  .game-canvas {
+    border: 4px solid hsl(var(--arcade-blue-1));
+    box-shadow: 
+      0 0 30px hsl(var(--arcade-blue-1) / 0.5),
+      0 0 60px hsl(var(--arcade-blue-2) / 0.3),
+      inset 0 0 50px hsl(var(--arcade-blue-4) / 0.3);
+    background: hsl(var(--arcade-blue-4));
+  }
+}
